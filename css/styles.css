@@ -1,0 +1,121 @@
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Montserrat";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat";
+}
+
+:root {
+    --tono: 267;
+    --comp: 51;
+
+    /*COLORES*/
+    --color-primario: hsla(var(--tono), 100%, 70%, 1); 
+    --color-primario-medio: hsla(var(--tono), 15%, 30%, 1);
+    --color-primario-claro: hsla(var(--tono), 10%, 45%, 1);
+    --color-primario-oscuro: hsla(var(--tono), 30%, 10%, 1);
+    --color-primario-oscuro-medio: hsla(var(--tono), 40%, 20%, 1);
+    --color--complemento: hsla(var(--comp), 100%, 47%, 1);
+}
+
+body {
+    background-color: #AB68FF;
+    padding: 2rem;
+    
+    .header {
+        background: #988FA3;
+        padding: 1rem;
+    } 
+
+    .main {
+        padding: 1rem;
+        background-color: #311F47;
+
+        .presentation {
+            background-color: #988FA3;
+            padding: 8px;
+            gap: 1rem;
+            justify-content: space-between;
+        }
+
+        .presentation__video {
+            background-color: #191221;
+
+            iframe {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+            }
+        }
+
+        .presentation__info {
+            background-color: #72677E;
+            height: max-content;
+            position: sticky;
+            top: 0px;
+        }
+
+        .sources {
+            background-color: rgb(252, 183, 236);
+        }
+
+        .project {
+            background-color: #311F47;
+            padding: 8px;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .aside {
+        background-color: #988FA3;
+        padding: 1rem;
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    
+    body {
+
+        display: grid;
+        grid-template-columns: 70% 30%; 
+
+        .header {
+            grid-column: 1/3;
+        }
+
+        .main { 
+            .presentation__video {
+                background-color: #191221;
+
+                iframe {
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                }
+            }
+
+            .presentation__info {
+                display: none;
+            }
+        }
+
+        .aside {
+            display: block;
+
+            .presentation__info.presentation_aside {
+                position: sticky;
+                top: 16px;
+            }
+        }
+
+    }
+}
